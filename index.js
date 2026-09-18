@@ -28,7 +28,11 @@ export default {
 
     try {
       const resp = await fetch(upstreamUrl, {
-        headers: { 'Accept': 'application/json' }
+        headers: {
+          'Accept': 'application/json',
+          'User-Agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Mobile/15E148 Safari/604.1',
+          'Accept-Language': 'es-ES,es;q=0.9,en;q=0.8'
+        }
       });
       const body = await resp.text();
       return new Response(body, {
